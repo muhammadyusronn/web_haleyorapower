@@ -106,7 +106,7 @@ while ($values=mysqli_fetch_array($gett)) {
 <br>
 <table border="0">
   <tr>
-    <td style="width: 30%" colspan="3">Palembang, <?php echo TanggalIndo(date('Y-m-d')); ?></td>
+    <td style="width: 30%" colspan="3"><?php echo TanggalIndo(date('Y-m-d')); ?></td>
   </tr>
   <tr>
     <td style="width: 40%" colspan="2">Mengetahui,</td>
@@ -120,7 +120,7 @@ while ($values=mysqli_fetch_array($gett)) {
 </body>
 </html><!-- Akhir halaman HTML yang akan di konvert -->
 <?php
-$filename="Bukti Penjualan ".$_GET['id']."__".date('d-m-Y').".pdf"; //ubah untuk menentukan nama file pdf yang dihasilkan nantinya
+$filename="Bukti Transaksi Barang ".$_GET['id']."__".date('d-m-Y').".pdf"; //ubah untuk menentukan nama file pdf yang dihasilkan nantinya
 //==========================================================================================================
 //Copy dan paste langsung script dibawah ini,untuk mengetahui lebih jelas tentang fungsinya silahkan baca-baca tutorial tentang HTML2PDF
 //==========================================================================================================
