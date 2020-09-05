@@ -40,8 +40,8 @@
                   ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
-                      <td><?php echo $data['kodetransaksi']; ?></td>
                       <td><?php echo TanggalIndo($data['tanggaltransaksi']); ?></td>
+                      <td><?php echo $data['kodetransaksi']; ?></td>
                       <td><?php echo $data['penyulang']; ?></td>
                       <td><?php echo $data['pekerjaan']; ?></td>
                       <td><?php echo $data['nama']; ?></td>
