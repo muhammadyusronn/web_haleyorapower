@@ -78,6 +78,7 @@ include 'models/config.php';
         </a>
         <div id="collapseTransaksi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="v_transaksi-barang-masuk.php">Barang Masuk</a>
             <a class="collapse-item" href="v_transaksi-barang.php">Barang Keluar</a>
           </div>
         </div>
@@ -95,6 +96,7 @@ include 'models/config.php';
         </a>
         <div id="collapseDataTransaksi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="v_masuk.php">Barang Masuk</a>
             <a class="collapse-item" href="v_transaksi.php">Barang Keluar</a>
           </div>
         </div>
@@ -109,7 +111,8 @@ include 'models/config.php';
         </a>
         <div id="collapseLaporan" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="f_laporan-transaksi.php">Transaksi Barang</a>
+            <a class="collapse-item" href="f_laporan-masuk.php">Barang Masuk</a>
+            <a class="collapse-item" href="f_laporan-transaksi.php">Barang Keluar</a>
           </div>
         </div>
       </li>

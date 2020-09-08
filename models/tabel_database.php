@@ -19,4 +19,14 @@ function tabel_admin(){
  	$dtltrs="tbl_detailtransaksi";
  	return ($dtltrs);
  }
+
+ function tabel_masuk(){
+ 	$trs="tbl_masuk";
+ 	return ($trs);
+ }
+
+ function tabel_detailmasuk(){
+ 	$dtltrs="tbl_detailmasuk";
+ 	return ($dtltrs);
+ }
  ?>
