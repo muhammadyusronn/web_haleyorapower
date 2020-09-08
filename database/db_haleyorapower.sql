@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 04 Sep 2020 pada 20.53
+-- Waktu pembuatan: 08 Sep 2020 pada 03.53
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.7
 
@@ -64,8 +64,28 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`kodebarang`, `namabarang`, `deskripsibarang`, `jumlahbarang`, `satuan`) VALUES
-('KBR001', 'Kabel TIC 35', 'Ini adalah kabel TIC 35', 80, 'Meter'),
-('KBR002', 'Sepatu Kabel AL-CU 70', 'Ini adalah sepatu kabel AL-CU 70', 82, 'Buah');
+('KBR001', 'Kabel TIC 35', 'Ini adalah kabel TIC 35', 90, 'Meter'),
+('KBR002', 'Sepatu Kabel AL-CU 70', 'Ini adalah sepatu kabel AL-CU 70', 90, 'Buah');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_detailmasuk`
+--
+
+CREATE TABLE `tbl_detailmasuk` (
+  `kodetransaksi` varchar(20) NOT NULL,
+  `kodebarang` varchar(20) NOT NULL,
+  `jumlahbarang` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_detailmasuk`
+--
+
+INSERT INTO `tbl_detailmasuk` (`kodetransaksi`, `kodebarang`, `jumlahbarang`) VALUES
+('TRM001', 'KBR001', 8),
+('TRM001', 'KBR002', 6);
 
 -- --------------------------------------------------------
 
@@ -86,6 +106,27 @@ CREATE TABLE `tbl_detailtransaksi` (
 INSERT INTO `tbl_detailtransaksi` (`kodetransaksi`, `kodebarang`, `jumlahbarang`) VALUES
 ('TRS001', 'KBR001', 6),
 ('TRS001', 'KBR002', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_masuk`
+--
+
+CREATE TABLE `tbl_masuk` (
+  `kodetransaksi` varchar(20) NOT NULL,
+  `tanggaltransaksi` date NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `nomorhp` varchar(13) NOT NULL,
+  `penanggungjawab` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_masuk`
+--
+
+INSERT INTO `tbl_masuk` (`kodetransaksi`, `tanggaltransaksi`, `nama`, `nomorhp`, `penanggungjawab`) VALUES
+('TRM001', '2020-09-08', 'Henry Sujana', '081288239221', 'admin');
 
 -- --------------------------------------------------------
 
@@ -127,10 +168,22 @@ ALTER TABLE `tbl_barang`
   ADD PRIMARY KEY (`kodebarang`);
 
 --
+-- Indeks untuk tabel `tbl_detailmasuk`
+--
+ALTER TABLE `tbl_detailmasuk`
+  ADD PRIMARY KEY (`kodetransaksi`,`kodebarang`);
+
+--
 -- Indeks untuk tabel `tbl_detailtransaksi`
 --
 ALTER TABLE `tbl_detailtransaksi`
   ADD PRIMARY KEY (`kodetransaksi`,`kodebarang`);
+
+--
+-- Indeks untuk tabel `tbl_masuk`
+--
+ALTER TABLE `tbl_masuk`
+  ADD PRIMARY KEY (`kodetransaksi`);
 
 --
 -- Indeks untuk tabel `tbl_transaksi`
